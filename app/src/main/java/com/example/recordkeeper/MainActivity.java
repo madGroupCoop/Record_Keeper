@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
         Button buttonSend = findViewById(R.id.button_send);
         buttonSend.setOnClickListener(v -> {
             Intent i = new Intent(Intent.ACTION_SEND);
-            i.putExtra(Intent.EXTRA_EMAIL, new String[] {"example@domain.com"});
-            i.putExtra(Intent.EXTRA_SUBJECT, "BackUp Of Personal Details");
+            i.putExtra(Intent.EXTRA_EMAIL, new String[] {"darenwallace@gmail.com"});
+            i.putExtra(Intent.EXTRA_SUBJECT, "BackUp Of Your Record");
             i.putExtra(Intent.EXTRA_TEXT, "Attached below is a back up of your personal details");
             i.setType("application/octet-stream");
             i.putExtra(Intent.EXTRA_STREAM,(getDatabasePath(DATABASE_NAME)));
