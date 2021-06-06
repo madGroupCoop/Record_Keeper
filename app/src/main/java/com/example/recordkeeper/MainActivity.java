@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
+        //writes the contents of the recyclerview in the database
         DatabaseHelper dbHelper = new DatabaseHelper(this);
         rDatabase = dbHelper.getWritableDatabase();
 
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.addItemDecoration(new SimpleDividerItemDecoration(this));
 
+        //Deletes an item in the recyclerview by swiping on it
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
                 ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }).attachToRecyclerView(recyclerView);
 
-
+        //Initializing & Intenting the Buttons (Add Item & Back up to email)
         rEditTextName = findViewById(R.id.edittext_name);
 
         Button buttonAdd = findViewById(R.id.button_add);
